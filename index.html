@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulacro Examen Universitario</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container" id="probarmeScreen">
+    <h1>Simulacro de Examen</h1>
+    <!-- Botón para generar el ID (visible inicialmente) -->
+    <button id="probarmeBtn">Probarme</button>
+  </div>
+
+  <!-- Segunda pantalla que se muestra después de generar el ID -->
+  <div class="container" id="examenScreen" style="display:none;">
+    <h1>Simulacro de Examen</h1>
+    <button id="iniciarExamenBtn">Iniciar Examen</button>
+
+    <!-- Tarjeta que mostrará las preguntas -->
+    <div id="preguntaCard" class="card" style="display:none;">
+      <h2 id="preguntaTexto"></h2>
+
+      <!-- Botones de opción para las respuestas -->
+      <div id="opciones">
+        <button id="opcionA">A</button>
+        <button id="opcionB">B</button>
+        <button id="opcionC">C</button>
+        <button id="opcionD">D</button>
+      </div>
+    </div>
+
+    <!-- Botón para finalizar el examen -->
+    <button id="finalizarExamenBtn" style="display:none;">Finalizar Examen</button>
+
+    <!-- Sección de resultados -->
+    <div id="resultado" style="display:none;">
+      <h2>Resultados</h2>
+      <p id="correctas"></p>
+      <p id="incorrectas"></p>
+    </div>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
