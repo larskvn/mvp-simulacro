@@ -147,3 +147,20 @@ if (userId && window.location.pathname.includes('examen.html')) {
       alert('Hubo un error al obtener las preguntas.');
     });
 }
+
+// Manejo del menú hamburguesa para navegación responsiva
+document.getElementById('hamburger').addEventListener('click', function () {
+  const navLinks = document.querySelector('.nav-links');
+  const isActive = navLinks.classList.toggle('active');
+  document.getElementById('hamburger').classList.toggle('active', isActive);
+});
+
+// Manejo del submenú en dispositivos móviles
+document.querySelectorAll('.dropdown > a').forEach(dropdown => {
+dropdown.addEventListener('click', function (e) {
+  e.preventDefault();
+  const dropdownMenu = this.nextElementSibling;
+  dropdownMenu.classList.toggle('active');
+});
+});
+

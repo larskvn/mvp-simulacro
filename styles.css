@@ -1,59 +1,34 @@
-/* Fuente Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
-
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-/* Encabezado */
-header {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
+/* General Styles */
 nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+  background-color: #fff;
 }
 
 .logo img {
-  height: 40px;
+  width: 100px;
 }
 
 .nav-links {
   display: flex;
-  align-items: center;
-  flex-grow: 1;
-  justify-content: center;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  gap: 20px;
 }
 
 .nav-links li {
   position: relative;
-  margin: 0 15px;
 }
 
 .nav-links a {
-  color: #627A95;
   text-decoration: none;
-  font-weight: 300;
-  font-size: 16px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
+  color: #627A95;
+  font-weight: bold;
 }
 
 .nav-links a.active {
   color: #5841EA;
-  font-weight: 700;
 }
 
 .nav-links a:hover {
@@ -65,31 +40,15 @@ nav {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  padding: 10px;
+  background-color: #fff;
   list-style: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ddd;
 }
 
 .dropdown:hover .dropdown-menu {
   display: block;
-}
-
-.dropdown-menu a {
-  color: #627A95;
-  text-decoration: none;
-  padding: 8px 12px;
-  display: block;
-}
-
-.dropdown-menu a:hover {
-  background-color: #f1f1f1;
-  color: #5841EA;
-}
-
-.signup {
-  margin-left: auto;
 }
 
 .signup button {
@@ -107,6 +66,88 @@ nav {
 .signup button:hover {
   background-color: #4b36c5;
 }
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #627A95;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px; /* Ajusta según la altura de tu navbar */
+    left: 0; /* Ocupa todo el ancho del viewport */
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Asegura que esté por encima de otros contenidos */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    position: relative; /* Necesario para el submenú */
+  }
+
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Se posiciona justo debajo del elemento padre */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ddd;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Asegura que el submenú ocupe todo el ancho del contenedor */
+  }
+
+  .dropdown-menu li {
+    margin: 0;
+  }
+
+  .dropdown-menu a {
+    padding: 10px;
+    display: block;
+    text-align: center; /* Centra el texto dentro del submenú */
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+  .signup {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active + .nav-links {
+    display: flex;
+  }
+}
+
 
 /* Sección Principal */
 main {
@@ -186,6 +227,10 @@ main {
   max-width: 100%;
   height: auto;
 }
+
+
+
+
 
 /* Sección de Examen */
 .examen {
