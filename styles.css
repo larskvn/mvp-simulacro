@@ -170,9 +170,8 @@ main {
 
 .container-info h1 {
   color: #101566;
-  font-size: 30px;
+  font-size: 48px;
   margin: 0;
-  text-align: justify;
 }
 
 .container-info span {
@@ -181,7 +180,6 @@ main {
 
 .container-info h3 {
   color: #627A95;
-  text-align: justify;
 }
 
 .buttons-container {
