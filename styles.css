@@ -230,8 +230,6 @@ main {
 
 
 
-
-
 /* Sección de Examen */
 .examen {
   padding: 20px;
@@ -246,6 +244,7 @@ main {
 #preguntaTexto {
   font-size: 18px;
   margin-bottom: 20px;
+  text-align: justify; /* Justifica el texto */
 }
 
 #opciones button {
@@ -261,6 +260,7 @@ main {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  text-align: justify; /* Justifica el texto dentro del botón */
 }
 
 #opciones button:hover {
@@ -284,6 +284,7 @@ main {
 #opciones button .contenido {
   flex: 1;
   font-size: 16px;
+  text-align: justify; /* Justifica el texto dentro de la opción */
 }
 
 /* Centrado de contenido */
@@ -303,7 +304,7 @@ main {
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  text-align: justify; /* Justifica el texto */
 }
 
 /* Estilo del botón Finalizar Examen */
@@ -327,12 +328,14 @@ main {
 .resultado-container {
   margin-top: 20px;
   padding: 20px;
+  text-align: justify; /* Justifica el texto */
 }
 
 #resultado h2 {
   margin-bottom: 20px;
   color: #333;
   font-size: 24px;
+  text-align: justify; /* Justifica el texto */
 }
 
 .resultado-item {
@@ -367,6 +370,7 @@ main {
 #resultado #tiempoTotal {
   color: #007BFF;
 }
+
 .volver-btn {
   margin-top: 20px;
   padding: 10px 20px;
@@ -381,6 +385,72 @@ main {
 
 .volver-btn:hover {
   background-color: #3e2ab7;
+}
+
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+  
+  /* Ajuste general del contenedor */
+  .container {
+    padding: 10px;
+    min-height: 100vh;
+  }
+
+  /* Tarjeta centrada en pantallas más pequeñas */
+  .centered-card {
+    width: 90%;
+    max-width: 100%;
+    margin: 10px;
+    padding: 15px;
+  }
+
+  /* Texto de la pregunta más pequeño */
+  #preguntaTexto {
+    font-size: 16px;
+    margin-bottom: 15px;
+    text-align: justify; /* Justifica el texto */
+  }
+
+  /* Opciones de preguntas más ajustadas */
+  #opciones button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  #opciones button .clave {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    line-height: 35px;
+    margin-right: 10px;
+  }
+
+  /* Botón para finalizar examen más pequeño */
+  .finalizar-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  /* Ajuste de resultados en móviles */
+  #resultado h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: justify; /* Justifica el texto */
+  }
+
+  .resultado-item {
+    padding: 8px 0;
+  }
+
+  .resultado-label, .resultado-value {
+    font-size: 16px;
+  }
+
+  /* Ajuste del botón "Volver" */
+  .volver-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
 }
 
 
