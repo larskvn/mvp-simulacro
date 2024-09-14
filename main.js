@@ -30,6 +30,7 @@ function iniciarExamen() {
       startTime = new Date(); // Iniciar el contador de tiempo
       mostrarPregunta(0); // Mostrar la primera pregunta
       document.getElementById('iniciarExamenBtn').style.display = 'none';
+      document.getElementById('finalizarExamenBtn').style.display = 'none'; // Ocultar el botón al iniciar el examen
     })
     .catch(error => console.error('Error al iniciar examen:', error));
 }
@@ -48,7 +49,7 @@ function mostrarPregunta(index) {
       const clave = pregunta[`clave${letra}`];
       if (clave) {
         const button = document.createElement('button');
-        button.textContent = `${letra}: ${clave}`;
+        button.innerHTML = `<span class="clave">${letra}</span><span class="contenido">${clave}</span>`;
         button.onclick = () => responderPregunta(letra);
         opcionesDiv.appendChild(button);
       }
@@ -56,6 +57,8 @@ function mostrarPregunta(index) {
 
     document.getElementById('preguntaCard').style.display = 'block'; // Mostrar la pregunta
   } else {
+    // Ocultar la tarjeta de pregunta y mostrar el botón de finalizar examen solo en esta ventana
+    document.getElementById('preguntaCard').style.display = 'none';
     document.getElementById('finalizarExamenBtn').style.display = 'inline-block';
   }
 }
@@ -82,6 +85,8 @@ function responderPregunta(respuesta) {
       if (currentQuestionIndex < questions.length) {
         mostrarPregunta(currentQuestionIndex); // Pasar automáticamente a la siguiente pregunta
       } else {
+        // Mostrar el botón de finalizar examen solo después de la última pregunta
+        document.getElementById('preguntaCard').style.display = 'none';
         document.getElementById('finalizarExamenBtn').style.display = 'inline-block';
       }
     })
@@ -107,7 +112,7 @@ function finalizarExamen() {
       correctas = resultados.correctas;
       incorrectas = questions.length - correctas;
 
-      document.getElementById('finalizarExamenBtn').style.display = 'none';
+      document.getElementById('finalizarExamenBtn').style.display = 'none'; // Ocultar el botón de finalizar examen después de hacer clic
       document.getElementById('resultado').style.display = 'block';
       document.getElementById('correctas').textContent = `Correctas: ${correctas}`;
       document.getElementById('incorrectas').textContent = `Incorrectas: ${incorrectas}`;

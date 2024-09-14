@@ -60,27 +60,27 @@ button:disabled {
   align-items: center;
   width: 100%;
   margin: 10px 0;
-  padding: 12px;
+  padding: 15px;
   text-align: left;
-  background-color: #f9f9f9;
-  color: #333;
-  border: 1px solid #ccc;
+  background-color: #007BFF;
+  color: white;
+  border: none;
   border-radius: 5px;
   font-size: 16px;
-  transition: background-color 0.3s;
   cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 #opciones button:hover {
-  background-color: #e9e9e9;
-  border-color: #007BFF;
+  background-color: #0056b3;
 }
 
 #opciones button .clave {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background-color: #007BFF;
+  background-color: #ffcc00; /* Color del círculo (amarillo) */
   color: white;
   font-weight: bold;
   border-radius: 50%;
@@ -88,12 +88,13 @@ button:disabled {
   line-height: 40px;
   margin-right: 15px;
   font-size: 18px;
+  color: #333; /* Color del texto (negro) */
 }
 
 #opciones button .contenido {
   flex: 1;
   font-size: 16px;
-  color: #333;
+  color: white;
 }
 
 #finalizarExamenBtn {
@@ -109,12 +110,37 @@ button:disabled {
 #resultado {
   display: none;
   margin-top: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#resultado p {
-  font-size: 18px;
-  margin: 5px 0;
+#resultado h2 {
+  margin-bottom: 20px;
   color: #333;
+  font-size: 24px;
+}
+
+.resultado-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.resultado-item:last-child {
+  border-bottom: none;
+}
+
+.resultado-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.resultado-value {
+  font-size: 18px;
+  color: #007BFF;
 }
 
 #resultado #correctas {
