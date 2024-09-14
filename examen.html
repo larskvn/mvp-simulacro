@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulacro Examen Universitario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./assets/logo.svg" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Universidad</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">UNMSM</a></li>
+                        <li><a href="#">CALLAO</a></li>
+                        <li><a href="#">VILLAREAL</a></li>
+                        <li><a href="#">UNI</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Cursos</a></li>
+                <li><a href="#">Docentes</a></li>
+                <li><a href="#">Ranking</a></li>
+            </ul>
+            <div class="signup">
+                <button>Sign Up</button>
+            </div>
+        </nav>
+      </header>
+      
+
+    <!-- Segunda pantalla que se muestra después de generar el ID -->
+    <div class="container" id="examenScreen" style="display:none;">
+
+        <!-- Tarjeta que mostrará las preguntas -->
+        <div id="preguntaCard" class="card centered-card" style="display:none;">
+            <h2 id="preguntaTexto"></h2>
+            <div id="opciones"></div>
+        </div>
+
+        <!-- Botón para finalizar el examen -->
+        <button id="finalizarExamenBtn" class="finalizar-btn" style="display:none;">Finalizar Examen</button>
+
+        <!-- Sección de resultados -->
+        <div id="resultado" class="resultado-container centered-card" style="display:none;">
+            <h2>Resultados</h2>
+            <div class="resultado-item">
+                <span class="resultado-label">Correctas:</span>
+                <span id="correctas" class="resultado-value">2</span>
+            </div>
+            <div class="resultado-item">
+                <span class="resultado-label">Incorrectas:</span>
+                <span id="incorrectas" class="resultado-value">8</span>
+            </div>
+            <div class="resultado-item">
+                <span class="resultado-label">Tiempo total:</span>
+                <span id="tiempoTotal" class="resultado-value">13.063 segundos</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
